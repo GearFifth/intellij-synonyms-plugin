@@ -1,10 +1,6 @@
 package intellijsynonymsplugin.utils;
 
 public class CaseDetector {
-    public enum CaseType {
-        CAMEL_CASE, KEBAB_CASE, PASCAL_CASE, SNAKE_CASE, UPPER_CASE, UNKNOWN
-    }
-
     public static CaseType detectCase(String identifier) {
         if (identifier.matches("[a-z]+([A-Z][a-z]*)*")) {
             return CaseType.CAMEL_CASE;
