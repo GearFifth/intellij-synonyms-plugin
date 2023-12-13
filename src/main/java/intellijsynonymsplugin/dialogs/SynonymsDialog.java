@@ -11,12 +11,12 @@ import java.util.List;
 public class SynonymsDialog extends DialogWrapper {
 
     private final List<String> synonyms;
-    private final String word;
+    private final String identifier;
 
-    public SynonymsDialog(String word, List<String> synonyms) {
+    public SynonymsDialog(String identifier, List<String> synonyms) {
         super(true);
         this.synonyms = synonyms;
-        this.word = word;
+        this.identifier = identifier;
         setTitle("Synonyms Dialog");
         init();
     }
@@ -41,9 +41,9 @@ public class SynonymsDialog extends DialogWrapper {
     }
 
     private String getSynonymsText() {
-        StringBuilder builder = new StringBuilder("Synonyms for " + this.word + ":\n");
+        StringBuilder builder = new StringBuilder("Synonyms for " + this.identifier + ":\n");
         if(synonyms.isEmpty()){
-            builder.append("There are no synonyms for the selected word");
+            builder.append("There are no synonyms for the selected identifier");
         }
         for (String synonym : synonyms) {
             builder.append("- ").append(synonym).append("\n");

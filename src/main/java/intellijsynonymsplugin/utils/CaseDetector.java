@@ -4,8 +4,6 @@ public class CaseDetector {
     public static CaseType detectCase(String identifier) {
         if (identifier.matches("[a-z]+([A-Z][a-z]*)*")) {
             return CaseType.CAMEL_CASE;
-        } else if (identifier.matches("[a-z]+(-[a-z]+)*")) {
-            return CaseType.KEBAB_CASE;
         } else if (identifier.matches("[A-Z][a-zA-Z]*")) {
             return CaseType.PASCAL_CASE;
         } else if (identifier.matches("[a-z]+(_[a-z]+)*")) {
