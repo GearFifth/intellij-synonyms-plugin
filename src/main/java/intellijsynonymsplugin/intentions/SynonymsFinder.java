@@ -10,8 +10,11 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.IncorrectOperationException;
 import intellijsynonymsplugin.dialogs.SynonymsDialog;
+import intellijsynonymsplugin.repositories.ThesaurusRepository;
+import intellijsynonymsplugin.services.ThesaurusService;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SynonymsFinder implements IntentionAction {
@@ -33,10 +36,14 @@ public class SynonymsFinder implements IntentionAction {
 
     @Override
     public void invoke(@NotNull Project project, Editor editor, PsiFile file) throws IncorrectOperationException {
-        System.out.println("Intention Action invoked: " + getText());
-        PsiElement element = file.findElementAt(editor.getCaretModel().getOffset());
-        String word = element.getText();
-        new SynonymsDialog(word, List.of("alternative1", "alternative2", "alternative3")).showAndGet();
+        ThesaurusService thesaurusService = new ThesaurusService(new ThesaurusRepository());
+        try {
+            PsiElement element = file.findElementAt(editor.getCaretModel().getOffset());
+            String word = element != null ? element.getText() : null;
+            new SynonymsDialog(word,thesaurusService.getSynonyms(word)).showAndGet();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
