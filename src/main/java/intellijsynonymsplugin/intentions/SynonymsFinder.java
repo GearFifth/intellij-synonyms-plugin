@@ -39,8 +39,8 @@ public class SynonymsFinder implements IntentionAction {
         ThesaurusService thesaurusService = new ThesaurusService(new ThesaurusRepository());
         try {
             PsiElement element = file.findElementAt(editor.getCaretModel().getOffset());
-            String word = element != null ? element.getText() : null;
-            new SynonymsDialog(word,thesaurusService.getSynonyms(word)).showAndGet();
+            String identifier = element != null ? element.getText() : null;
+            new SynonymsDialog(identifier,thesaurusService.getSynonyms(identifier)).showAndGet();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

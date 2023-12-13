@@ -42,11 +42,16 @@ public class SynonymsDialog extends DialogWrapper {
 
     private String getSynonymsText() {
         StringBuilder builder = new StringBuilder("Synonyms for " + this.word + ":\n");
+        if(synonyms.isEmpty()){
+            builder.append("There are no synonyms for the selected word");
+        }
         for (String synonym : synonyms) {
             builder.append("- ").append(synonym).append("\n");
         }
         return builder.toString();
     }
+
+
 
     private int getLongestRowWidth(JTextArea textArea) {
         int maxWidth = 0;
@@ -57,6 +62,6 @@ public class SynonymsDialog extends DialogWrapper {
             maxWidth = Math.max(maxWidth, width);
         }
 
-        return maxWidth + 20;
+        return maxWidth + textArea.getInsets().left + textArea.getInsets().right + 20;
     }
 }
