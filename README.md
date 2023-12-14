@@ -1,44 +1,50 @@
-# intellij-synonyms-plugin
+# IntelliJ Synonyms Finder Plugin
 
-![Build](https://github.com/GearFifth/intellij-synonyms-plugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+IntelliJ Synonyms Finder Plugin is a handy tool for enhancing your coding experience by providing synonyms suggestions within the IntelliJ IDEA IDE.
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties), [plugin ID](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `PLUGIN_ID` in the above README badges.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+## Table of Contents
 
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+## Overview
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
+IntelliJ Synonyms Finder Plugin integrates with IntelliJ IDEA, offering synonym suggestions for identifiers in your code.
+
+## Features
+
+- **Thesaurus Integration:** Access a thesaurus directly within IntelliJ IDEA to find synonyms for identifiers in your code.
+- **Multi-Word Synonyms:** Get suggestions for multi-word synonyms, helping you choose the most appropriate terms.
 
 ## Installation
 
 - Using the IDE built-in plugin system:
-  
+
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "intellij-synonyms-plugin"</kbd> >
   <kbd>Install</kbd>
-  
+
 - Manually:
 
   Download the [latest release](https://github.com/GearFifth/intellij-synonyms-plugin/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+
+## Usage
+
+1. **Activate the Plugin:**
+  - Once installed, the plugin is activated automatically.
+
+2. **Access Synonyms:**
+  - Place the cursor on an identifier in the editor.
+  - Press `Alt` + `Enter` to access the plugin command.
+  - Choose "Find Synonyms" to see suggestions for the selected identifier.
+
+3. **Multi-Word Synonyms:**
+  - The plugin supports multi-word synonyms for identifiers written in `PascalCase`, `CamelCase`, `SnakeCase` and `UpperCase`.
+
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
 [docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
