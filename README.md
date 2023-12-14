@@ -1,7 +1,7 @@
 # IntelliJ Synonyms Finder Plugin
-
+<!-- Plugin description -->
 IntelliJ Synonyms Finder Plugin is a handy tool for enhancing your coding experience by providing synonyms suggestions within the IntelliJ IDEA IDE.
-
+<!-- Plugin description end -->
 ## Table of Contents
 
 - [Overview](#overview)
@@ -10,6 +10,7 @@ IntelliJ Synonyms Finder Plugin is a handy tool for enhancing your coding experi
 - [Usage](#usage)
 
 ## Overview
+
 
 IntelliJ Synonyms Finder Plugin integrates with IntelliJ IDEA, offering synonym suggestions for identifiers in your code.
 
