@@ -11,14 +11,24 @@ public class PascalCaseSplitter implements IdentifierSplitter {
         List<String> words = new ArrayList<>();
         StringBuilder currentWord = new StringBuilder();
 
-        for (char c : identifier.toCharArray()) {
-            if (Character.isUpperCase(c)) {
-                if (!currentWord.isEmpty()) {
-                    words.add(currentWord.toString());
-                    currentWord.setLength(0);
+        for (int i = 0; i < identifier.length(); i++) {
+            char currentChar = identifier.charAt(i);
+
+            if (Character.isUpperCase(currentChar)) {
+
+                if (!currentWord.isEmpty() && (isLastCharacter(i, identifier) || isNextCharacterUpperCase(i, identifier))) {
+                    currentWord.append(currentChar);
+                } else {
+                    //Start a new word
+                    if (!currentWord.isEmpty()) {
+                        words.add(currentWord.toString());
+                        currentWord.setLength(0);
+                    }
+                    currentWord.append(currentChar);
                 }
+            } else {
+                currentWord.append(currentChar);
             }
-            currentWord.append(c);
         }
 
         if (!currentWord.isEmpty()) {
@@ -26,5 +36,13 @@ public class PascalCaseSplitter implements IdentifierSplitter {
         }
 
         return words;
+    }
+
+    private boolean isNextCharacterUpperCase(int currentIndex, String identifier) {
+        return currentIndex + 1 < identifier.length() && Character.isUpperCase(identifier.charAt(currentIndex + 1));
+    }
+
+    private boolean isLastCharacter(int currentIndex, String identifier) {
+        return currentIndex == identifier.length() - 1;
     }
 }

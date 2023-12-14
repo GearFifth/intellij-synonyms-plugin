@@ -9,7 +9,6 @@ public class SplitterFactory {
         return switch (type) {
             case CAMEL_CASE -> new CamelCaseSplitter();
             case SNAKE_CASE -> new SnakeCaseSplitter();
-            case KEBAB_CASE -> new KebabCaseSplitter();
             case PASCAL_CASE -> new PascalCaseSplitter();
             case UPPER_CASE -> new UpperCaseSplitter();
             default -> throw new IllegalArgumentException("Unsupported splitter type: " + type);
