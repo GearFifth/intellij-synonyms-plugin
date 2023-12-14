@@ -1,0 +1,5 @@
+public class X{
+    private string path;
+    // List synonyms for the identifier below:
+    // synonyms: route, way, pathway, trajectory, steps, track, course, line
+}

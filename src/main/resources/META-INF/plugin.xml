@@ -1,18 +1,27 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.gearfifth.intellijsynonymsplugin</id>
-    <name>intellij-synonyms-plugin Template</name>
-    <vendor>gearfifth</vendor>
+    <name>Synonyms Finder</name>
+    <vendor url="https://github.com/GearFifth">Ilija Beslin</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java-capable</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
+      Enhance your coding experience with Synonyms Finder,<br>
+      an IntelliJ IDEA plugin that shows synonyms for identifiers in your source code.<br>
+      Easily discover alternative names for variables, methods, and more.
+    ]]>
+    </description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.gearfifth.intellijsynonymsplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <intentionAction>
+            <language>JAVA</language>
+            <className>intellijsynonymsplugin.intentions.SynonymsFinder</className>
+            <category>SDK intentions</category>
+        </intentionAction>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.gearfifth.intellijsynonymsplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
