@@ -15,7 +15,6 @@ import intellijsynonymsplugin.services.ThesaurusService;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.util.List;
 
 public class SynonymsFinder implements IntentionAction {
     @Override
